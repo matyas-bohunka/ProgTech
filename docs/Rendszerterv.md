@@ -40,7 +40,7 @@
  - **JavaFx**
  
 ## 7. Implementációs terv
-**Az alkalmazás Java nyelven készül. Az ablakok megjelenítését, módosítását JavaFx-segítségévle kezeljük. A fejlesztés során két tervezési mintát fogunk megvalósítani. Az első a Decorator amivel a kuponos akciókat fogjuk kezelni. A második pedig a Controller melynek segíségével fogjuk a konfigurációkat összerakni.
+**Az alkalmazás Java nyelven készül. Az ablakok megjelenítését, módosítását JavaFx-segítségévle kezeljük. A fejlesztés során két tervezési mintát fogunk megvalósítani. Az első a Decorator amivel a kuponos akciókat fogjuk kezelni. A második pedig a Controller melynek segíségével fogjuk a konfigurációkat összerakni.**
  
 ## 8. Adatbázisterv
 ![image](../docs/img/adatbazis_modell.png)
