@@ -1,8 +1,5 @@
 ## 1. Rendszer célja
-A rendszer célja egy olyan ablakos alkalmazás, 
-amivel egy online Lenovo laptop bolt tud vásárlók számára laptopokat rendelni.
-Bejelentkezés/regisztráció után a  lehetősége lesz laptop típusát választani majd azt konfigurálva megrendelni.
-Megrendelt laptopok adatait meg lehet tekinteni.
+**A rendszer célja egy olyan ablakos alkalmazás, amivel egy online Lenovo laptop bolt tud vásárlók számára laptopokat rendelni.Bejelentkezés/regisztráció után a  lehetősége lesz laptop típusát választani majd azt konfigurálva megrendelni.Megrendelt laptopok adatait meg lehet tekinteni.**
 
 ## 2. Üzleti folyamatok modellje
 ![image](../docs/img/uzleti_modell.png)
@@ -43,11 +40,7 @@ Megrendelt laptopok adatait meg lehet tekinteni.
  - **JavaFx**
  
 ## 7. Implementációs terv
-Az alkalmazás Java nyelven készül.
- Az ablakok megjelenítését, módosítását JavaFx-segítségévle kezeljük.
- A fejlesztés során két tervezési mintát fogunk megvalósítani.
- Az első a Decorator amivel a  rakni.
- A második pedig a megfigyelő melynek segíségével pizza összerakást követően elmenti az adatbázisba majd frissíti a rendelések oldalt.
+**Az alkalmazás Java nyelven készül. Az ablakok megjelenítését, módosítását JavaFx-segítségévle kezeljük. A fejlesztés során két tervezési mintát fogunk megvalósítani. Az első a Decorator amivel a kuponos akciókat fogjuk kezelni. A második pedig a Controller melynek segíségével fogjuk a konfigurációkat összerakni.
  
 ## 8. Adatbázisterv
 ![image](../docs/img/adatbazis_modell.png)
