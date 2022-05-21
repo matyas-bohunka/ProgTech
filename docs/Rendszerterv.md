@@ -5,11 +5,32 @@ Bejelentkezés/regisztráció után a vevőnek lehetősége lesz kimérákat lé
 Elkészült kimérákat meg lehet tekinteni
 
 ## 2. Üzleti folyamatok modellje
+![image](../docs/img/uzleti_modell.png)
+
 
 ## 3. Követelmények
+**Funkcionális követelmények**
+  - **Felhasználói adatok tárolása**
+  - **Felhasználók tudják a mentett kimárákat megtekinteni**
+  - **Felhasználók tudjanak kimérát összeállítani**
 
 ## 4. Funkcionális terv
+**Rendszerszereplők:**
+  - **Felhasználó**
+  - **Vendég**
 
+  **Rendszerhasználati esetek és lefutásaik:**
+  - **Felhasználó**
+    - **Összeállíthat kimérát**
+    - **Megnézheti a mentett kimérákat**
+
+  - **Vendég**
+    - **Tud regisztrálni és bejelentkezni**
+
+    - **Bejelentkezés után:**
+      - **Kimérák létrehozása és mentése**
+      - **Kimérák megtekintése és rendelése**
+	  
 ## 5. Fizikai környezet
 
 ## 6. Architekturális terv
