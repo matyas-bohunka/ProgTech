@@ -1,8 +1,8 @@
 ## 1. Rendszer célja
 A rendszer célja egy olyan ablakos alkalmazás, 
-amivel a vevőnek lehetősége lesz különböző kimérák összeállítására.
-Bejelentkezés/regisztráció után a vevőnek lehetősége lesz kimérákat létrehozni.
-Elkészült kimérákat meg lehet tekinteni
+amivel egy online Lenovo laptop bolt tud vásárlók számára laptopokat rendelni.
+Bejelentkezés/regisztráció után a  lehetősége lesz laptop típusát választani majd azt konfigurálva megrendelni.
+Megrendelt laptopok adatait meg lehet tekinteni.
 
 ## 2. Üzleti folyamatok modellje
 ![image](../docs/img/uzleti_modell.png)
@@ -11,8 +11,9 @@ Elkészült kimérákat meg lehet tekinteni
 ## 3. Követelmények
 **Funkcionális követelmények**
 - **Felhasználói adatok tárolása**
-- **Felhasználók tudják a mentett kimárákat megtekinteni**
-- **Felhasználók tudjanak kimérát összeállítani**
+- **Felhasználó tudjon laptop konfigurációt készíteni és rendelni**
+- **Felhasználó tudja a megrendelt laptopokat megtekinteni**
+
 
 ## 4. Funkcionális terv
 **Rendszerszereplők:**
@@ -21,19 +22,20 @@ Elkészült kimérákat meg lehet tekinteni
 
 **Rendszerhasználati esetek és lefutásaik:**
 - **Felhasználó**
-  - **Összeállíthat kimérát**
-  - **Megnézheti a mentett kimérákat**
+  - **Konfigurálhat és megrendelhet laptopot**
+  - **Megnézheti a megrendelt laptopokat**
 
 - **Vendég**
   - **Tud regisztrálni és bejelentkezni**
 
   - **Bejelentkezés után:**
-    - **Kimérák létrehozása és mentése**
-    - **Kimérák megtekintése és rendelése**
+    - **Laptopok létrehozása és megrendelése**
+    - **Megrendelt laptopok megtekintése**
   
 ## 5. Fizikai környezet
 - **Intellij**
 - **Xampp/Mysql**
+- **JavaFx**
 
 ## 6. Architekturális terv
  - **Adatbázisszerver(Mysql)**
@@ -41,7 +43,14 @@ Elkészült kimérákat meg lehet tekinteni
  - **JavaFx**
  
 ## 7. Implementációs terv
+Az alkalmazás Java nyelven készül.
+ Az ablakok megjelenítését, módosítását JavaFx-segítségévle kezeljük.
+ A fejlesztés során két tervezési mintát fogunk megvalósítani.
+ Az első a Decorator amivel a  rakni.
+ A második pedig a megfigyelő melynek segíségével pizza összerakást követően elmenti az adatbázisba majd frissíti a rendelések oldalt.
+ 
+## 8. Adatbázisterv
+![image](../docs/img/adatbazis_modell.png)
+## 9. Tesztterv
 
-## 8. Tesztterv
-
-## 9. Telepítési terv
+## 10. Telepítési terv
