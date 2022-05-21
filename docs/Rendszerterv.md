@@ -10,31 +10,36 @@ Elkészült kimérákat meg lehet tekinteni
 
 ## 3. Követelmények
 **Funkcionális követelmények**
-  - **Felhasználói adatok tárolása**
-  - **Felhasználók tudják a mentett kimárákat megtekinteni**
-  - **Felhasználók tudjanak kimérát összeállítani**
+- **Felhasználói adatok tárolása**
+- **Felhasználók tudják a mentett kimárákat megtekinteni**
+- **Felhasználók tudjanak kimérát összeállítani**
 
 ## 4. Funkcionális terv
 **Rendszerszereplők:**
-  - **Felhasználó**
-  - **Vendég**
+- **Felhasználó**
+- **Vendég**
 
-  **Rendszerhasználati esetek és lefutásaik:**
-  - **Felhasználó**
-    - **Összeállíthat kimérát**
-    - **Megnézheti a mentett kimérákat**
+**Rendszerhasználati esetek és lefutásaik:**
+- **Felhasználó**
+  - **Összeállíthat kimérát**
+  - **Megnézheti a mentett kimérákat**
 
-  - **Vendég**
-    - **Tud regisztrálni és bejelentkezni**
+- **Vendég**
+  - **Tud regisztrálni és bejelentkezni**
 
-    - **Bejelentkezés után:**
-      - **Kimérák létrehozása és mentése**
-      - **Kimérák megtekintése és rendelése**
-	  
+  - **Bejelentkezés után:**
+    - **Kimérák létrehozása és mentése**
+    - **Kimérák megtekintése és rendelése**
+  
 ## 5. Fizikai környezet
+- **Intellij**
+- **Xampp/Mysql**
 
 ## 6. Architekturális terv
-
+ - **Adatbázisszerver(Mysql)**
+ - **Java**
+ - **JavaFx**
+ 
 ## 7. Implementációs terv
 
 ## 8. Tesztterv
