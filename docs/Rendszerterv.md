@@ -1,4 +1,8 @@
 ## 1. Rendszer célja
+A rendszer célja egy olyan ablakos alkalmazás, 
+amivel a vevőnek lehetősége lesz különböző kimérák összeállítására.
+Bejelentkezés/regisztráció után a vevőnek lehetősége lesz kimérákat létrehozni.
+Elkészült kimérákat meg lehet tekinteni
 
 ## 2. Üzleti folyamatok modellje
 
