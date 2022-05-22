@@ -17,7 +17,7 @@ public abstract class Laptop {
 
     public abstract int getProcessor();
 
-    protected void setProcessor(int weapon) {
+    protected void setProcessor(int processor) {
     }
 
     public abstract int getGraphics_card();
