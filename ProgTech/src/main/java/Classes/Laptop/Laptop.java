@@ -17,18 +17,17 @@ public abstract class Laptop {
 
     public abstract int getProcessor();
 
-    protected void setProcessor(int processor) {
-    }
+    protected abstract void setProcessor(int processor);
 
     public abstract int getGraphics_card();
 
-    protected abstract void setGraphics_card(int graphics_card);
+    protected void setGraphics_card(int graphics_card){};
 
     public abstract int getMemory();
 
     protected abstract void setMemory(int memory);
 
-    public abstract  int Os();
+    public abstract int getOs();
 
     protected  abstract void setOs(int Os);
 

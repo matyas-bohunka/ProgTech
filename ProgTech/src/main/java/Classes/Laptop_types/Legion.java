@@ -63,7 +63,7 @@ public class Legion extends Laptop {
 
     @Override
     public void setPrice(int price) {
-        super.price = price;
+        super.price = (int)(price*1.5);
     }
 
     @Override
