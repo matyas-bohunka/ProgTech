@@ -7,6 +7,7 @@ public class Graphics_card {
     private int tdp;
     private int capacity;
     private int speed;
+    private int price;
 
     public int getId() {
         return id;
@@ -54,6 +55,14 @@ public class Graphics_card {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int Price) {
+        this.price = price;
     }
 }
 

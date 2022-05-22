@@ -6,6 +6,7 @@ public class Memory {
     private String type;
     private int capacity;
     private int speed;
+    private int price;
 
     public int getId() {
         return id;
@@ -45,5 +46,13 @@ public class Memory {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int Price) {
+        this.price = price;
     }
 }
