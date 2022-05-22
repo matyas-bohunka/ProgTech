@@ -10,6 +10,15 @@ public abstract class LaptopDecoratorBase extends Laptop {
     }
 
     @Override
+    public int getStorage() {
+        return laptop.getStorage();
+    }
+
+    @Override
+    public int getProcessor() {
+        return laptop.getProcessor();
+    }
+    @Override
     public int getGraphics_card() {
         return laptop.getGraphics_card();
     }
