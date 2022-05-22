@@ -28,6 +28,10 @@ public abstract class Laptop {
 
     protected abstract void setMemory(int memory);
 
+    public abstract  int Os();
+
+    protected  abstract void setOs(int Os);
+
     public abstract int getPrice();
 
     protected abstract void setPrice(int price);
