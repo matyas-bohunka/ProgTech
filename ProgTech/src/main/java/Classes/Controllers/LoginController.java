@@ -3,6 +3,7 @@ package Classes.Controllers;
 import Classes.Users;
 import database.MySQLConnect;
 import Frontend.Login;
+import Frontend.Config;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
