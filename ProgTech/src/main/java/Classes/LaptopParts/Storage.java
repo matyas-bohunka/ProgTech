@@ -31,7 +31,7 @@ public class Storage {
     public void setType(String type) {
         this.type = type;
     }
-    
+
     public int getSpeed() {
         return speed;
     }

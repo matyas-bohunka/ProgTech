@@ -11,6 +11,7 @@ public class Processor {
     private int gpu_speed;
     private String gpu_memory;
     private int gpu_capacity;
+    private int price;
 
     public int getId() {
         return id;
@@ -90,5 +91,13 @@ public class Processor {
 
     public void setGpu_capacity(int gpu_capacity) {
         this.gpu_capacity = gpu_capacity;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int Price) {
+        this.price = price;
     }
 }
