@@ -73,7 +73,7 @@ public class LoginController {
     private void registerUser(String programUsername, String programPassword) {
         try {
             String sql = "INSERT INTO users (username, password) VALUES('"
-                    + programUsername + "', sha('" + programPassword + "'));";
+                    + programUsername + "', md5('" + programPassword + "'));";
             MySQLConnect.modifyDatabase(sql);
         } catch (Exception e) {
             e.printStackTrace();
@@ -84,7 +84,7 @@ public class LoginController {
         form.logger.info("Requesting table size from database.");
         int size = 0;
         try {
-            String query = "SELECT COUNT(*) AS total FROM spaceships where uid ='"
+            String query = "SELECT COUNT(*) AS total FROM laptops where uid ='"
                     + MySQLConnect.connectedUSer.id + "';";
             ResultSet res = MySQLConnect.executeQuery(query);
             res.next();
@@ -101,47 +101,51 @@ public class LoginController {
     private void prepareDataForTable(int size) {
         try {
             form.logger.info("Preparing data for table.");
-            String query = "SELECT spaceships.type , spaceships.fuel, spaceships.consumption, spaceships.price,\n" +
-                    "weapons.name AS 'Weapon', \n" +
-                    "power_plants.name AS 'Power Plant',\n" +
-                    "quantum_drives.name AS 'Quantum Drive' \n" +
-                    "FROM((spaceships INNER JOIN weapons ON spaceships.weapon = weapons.id)\n" +
-                    "INNER JOIN power_plants ON spaceships.power_plant = power_plants.id)\n" +
-                    "INNER JOIN quantum_drives ON spaceships.quantum_drive = quantum_drives.id\n" +
-                    "WHERE spaceships.uid ='" + MySQLConnect.connectedUSer.id + "';";
+            String query = "SELECT laptops.type , laptops.price,\n" +
+                    "grapgics_card.name AS 'Graphics Card', \n" +
+                    "storage.name AS 'Storage',\n" +
+                    "processor.name AS 'Processor' \n" +
+                    "memory.name AS 'Memmory' \n" +
+                    "os.name AS 'Os' \n" +
+                    "FROM((laptops INNER JOIN graphics_card ON laptops.graphics_card = graphics_card.id)\n" +
+                    "INNER JOIN storage ON laptops.storage = storage.id)\n" +
+                    "INNER JOIN processor ON laptops.processor = processor.id)\n" +
+                    "INNER JOIN memory ON laptops.memory = storage.memory)\n" +
+                    "INNER JOIN os ON laptops.os = os.id\n" +
+                    "WHERE laptops.uid ='" + MySQLConnect.connectedUSer.id + "';";
 
             ResultSet res = MySQLConnect.executeQuery(query);
-            String columns[] = {"Type", "Fuel", "Consumption", "Price",
-                    "Weapon", "Power Plant", "Quantum drive"};
+            String columns[] = {"Type", "Price",
+                    "Graphics Card", "Storage", "Processor", "Memory", "Os"};
             String data[][] = new String[size][7];
             int i = 0;
             while (res.next()) {
                 String type = res.getString("type");
-                String fuel = res.getString("fuel");
-                int consumption = res.getInt("consumption");
                 int price = res.getInt("price");
-                String weapon = res.getString("Weapon");
-                String powerPlant = res.getString("Power Plant");
-                String quantumDrive = res.getString("Quantum Drive");
+                String graphics_card = res.getString("Graphics card");
+                String storage = res.getString("Storage");
+                String processor = res.getString("Processor");
+                String memory = res.getString("Memory");
+                String os = res.getString("Os");
 
                 data[i][0] = type;
-                data[i][1] = fuel;
-                data[i][2] = consumption + "";
-                data[i][3] = price + "";
-                data[i][4] = weapon;
-                data[i][5] = powerPlant;
-                data[i][6] = quantumDrive;
+                data[i][1] = price + "";
+                data[i][2] = graphics_card;
+                data[i][3] = storage;
+                data[i][4] = processor;
+                data[i][5] = memory;
+                data[i][6] = os;
 
                 i++;
             }
-            createShipTable(data, columns);
+            createLaptopTable(data, columns);
             form.logger.info("Preparation successful.");
         } catch (Exception x) {
             x.printStackTrace();
         }
     }
 
-    private void createShipTable(String data[][], String columns[]) {
+    private void createLaptopTable(String data[][], String columns[]) {
         form.logger.info("Creating table.");
         DefaultTableModel model = new DefaultTableModel(data, columns);
         JTable table = new JTable(model);
