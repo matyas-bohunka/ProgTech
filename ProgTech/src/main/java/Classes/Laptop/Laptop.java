@@ -28,7 +28,7 @@ public abstract class Laptop {
 
     protected abstract void setMemory(int memory);
 
-    public abstract  int Os();
+    public abstract  int getOs();
 
     protected  abstract void setOs(int Os);
 
