@@ -2,7 +2,6 @@ package Classes.Controllers;
 
 import Classes.Users;
 import database.MySQLConnect;
-import Frontend.Config;
 import Frontend.Login;
 
 import javax.swing.*;
