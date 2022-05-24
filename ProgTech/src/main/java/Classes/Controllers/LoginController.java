@@ -196,7 +196,7 @@ public class LoginController {
         form.loginPanel.setVisible(true);
     }
 
-    public void createLaptopButtonClicked() {
+    public void createNewLaptopButtonClicked() {
         form.logger.info("Order new Laptop button pressed.");
         form.dispose();
         Config conf = new Config();
