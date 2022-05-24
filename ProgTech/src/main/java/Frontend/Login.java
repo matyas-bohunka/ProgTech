@@ -26,7 +26,7 @@ public class Login extends JDialog {
     private JButton cancelButton;
     private JButton orderNewLaptopButton;
     private JButton checkOrdersButton;
-    public static Logger logger = LoggerFactory.getLogger(LoginFrame.class);
+    public static Logger logger = LoggerFactory.getLogger(Login.class);
     private LoginController controller;
 
     public Login(boolean first) {

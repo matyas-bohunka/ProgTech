@@ -196,8 +196,8 @@ public class LoginController {
         form.loginPanel.setVisible(true);
     }
 
-    public void createNewShipButtonClicked() {
-        form.logger.info("Create ship button pressed.");
+    public void createLaptopButtonClicked() {
+        form.logger.info("Order new Laptop button pressed.");
         form.dispose();
         Config conf = new Config();
     }
