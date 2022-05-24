@@ -56,7 +56,7 @@ public class LoginController {
 
         try {
             String sql = "SELECT * FROM users WHERE username='"
-                    + programUsername + "' AND password=sha('" + programPassword + "');";
+                    + programUsername + "' AND password=md5('" + programPassword + "');";
             ResultSet resultSet = MySQLConnect.executeQuery(sql);
             if (resultSet.next()) {
                 user.username = resultSet.getString("username");

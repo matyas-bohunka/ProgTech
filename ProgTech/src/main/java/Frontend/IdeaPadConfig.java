@@ -43,6 +43,7 @@ public class IdeaPadConfig extends JFrame{
     private JLabel processorTDPLabel;
     private JLabel processorCoreLabel;
     private JLabel processorThreadLabel;
+    private JLabel osPriceLabel;
 
     private Laptop ideaPad;
     private static Memory selectedMemory;
@@ -78,7 +79,7 @@ public class IdeaPadConfig extends JFrame{
                     storagePriceLabel.setText(Integer.toString(selectedStorage.getPrice()));
                     storageSpeedLabel.setText(Integer.toString(selectedStorage.getSpeed()));
                     storageTypeLabel.setText(selectedStorage.getType());
-                    storageCapacityLabel.setText(Integer.toString(selectedStorage.getSpeed()));
+                    storageCapacityLabel.setText(Integer.toString(selectedStorage.getCapacity()));
                     setPriceLabel();
                     logger.info("new storage selected");
                 } catch (SQLException ex) {
@@ -165,6 +166,7 @@ public class IdeaPadConfig extends JFrame{
         while (resultSet.next()) {
             Os os = new Os();
             osComboBox.addItem(resultSet.getString("name"));
+            os.setName(resultSet.getString("name"));
             os.setPrice(resultSet.getInt("price"));
             osList.add(os);
         }
@@ -176,6 +178,7 @@ public class IdeaPadConfig extends JFrame{
         while (resultSet.next()) {
             Memory memory = new Memory();
             memoryComboBox.addItem(resultSet.getString("name"));
+            memory.setName(resultSet.getString("name"));
             memory.setCapacity(resultSet.getInt("capacity"));
             memory.setType(resultSet.getString("type"));
             memory.setSpeed(resultSet.getInt("speed"));
@@ -189,6 +192,7 @@ public class IdeaPadConfig extends JFrame{
         while (resultSet.next()) {
             Storage storage = new Storage();
             storageComboBox.addItem(resultSet.getString("name"));
+            storage.setName(resultSet.getString("name"));
             storage.setCapacity(resultSet.getInt("capacity"));
             storage.setType(resultSet.getString("type"));
             storage.setSpeed(resultSet.getInt("speed"));
@@ -202,6 +206,7 @@ public class IdeaPadConfig extends JFrame{
         while (resultSet.next()) {
             Processor processor = new Processor();
             processorComboBox.addItem(resultSet.getString("name"));
+            processor.setName(resultSet.getString("name"));
             processor.setSpeed(resultSet.getInt("speed"));
             processor.setPrice(resultSet.getInt("price"));
             processor.setTdp(resultSet.getInt("tdp"));
@@ -219,14 +224,14 @@ public class IdeaPadConfig extends JFrame{
         memoryPriceLabel.setText(Integer.toString(memoryList.get(0).getPrice()));
         memorySpeedLabel.setText(Integer.toString(memoryList.get(0).getSpeed()));
         memoryTypeLabel.setText(memoryList.get(0).getType());
-        memoryCapacityLabel.setText(Integer.toString(memoryList.get(0).getSpeed()));
+        memoryCapacityLabel.setText(Integer.toString(memoryList.get(0).getCapacity()));
     }
 
     private void loadDefaultStorage()throws  SQLException{
         storagePriceLabel.setText(Integer.toString(storageList.get(0).getPrice()));
         storageSpeedLabel.setText(Integer.toString(storageList.get(0).getSpeed()));
         storageTypeLabel.setText(storageList.get(0).getType());
-        storageCapacityLabel.setText(Integer.toString(storageList.get(0).getSpeed()));
+        storageCapacityLabel.setText(Integer.toString(storageList.get(0).getCapacity()));
     }
     private void loadDefaultProcessor()throws  SQLException{
         processorPriceLabel.setText(Integer.toString(processorList.get(0).getPrice()));
@@ -240,7 +245,7 @@ public class IdeaPadConfig extends JFrame{
         integratedMemoryLabel.setText(processorList.get(0).getGpu_memory());
     }
     private void loadDefaultOs()throws  SQLException{
-        memoryPriceLabel.setText(Integer.toString(osList.get(0).getPrice()));
+        osPriceLabel.setText(Integer.toString(osList.get(0).getPrice()));
     }
     private void handleOrderClick() {
         IdeaPad ideaPad = (IdeaPad) this.ideaPad;
