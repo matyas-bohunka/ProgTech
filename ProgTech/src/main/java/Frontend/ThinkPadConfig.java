@@ -1,10 +1,10 @@
 package Frontend;
 
-import Classes.Controllers.LegionController;
+import Classes.Controllers.ThinkPadController;
 import Classes.Decorator.SpecialOffer;
 import Classes.Laptop.Laptop;
 import Classes.LaptopParts.*;
-import Classes.Laptop_types.Legion;
+import Classes.Laptop_types.ThinkPad;
 import database.MySQLConnect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,8 +17,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LegionConfig extends JFrame{
-    private JPanel LegionConfigPanel;
+public class ThinkPadConfig extends JFrame{
+    private JPanel ThinkPadConfigPanel;
     private JComboBox storageComboBox;
     private JComboBox memoryComboBox;
     private JComboBox processorComboBox;
@@ -51,29 +51,29 @@ public class LegionConfig extends JFrame{
     private JLabel graphicsPriceLabel;
     private JLabel osPriceLabel;
 
-    private Laptop legion;
+    private Laptop thinkPad;
     private static Graphics_card selectedGraphicsCard;
     private static Memory selectedMemory;
     private static Storage selectedStorage;
     private static Os selectedOs;
     private static Processor selectedProcessor;
 
-    Logger logger = LoggerFactory.getLogger(LegionConfig.class);
+    Logger logger = LoggerFactory.getLogger(ThinkPadConfig.class);
     private List<Graphics_card> graphics_cardsList = new ArrayList<>();
     private List<Memory> memoryList = new ArrayList<>();
     private List<Storage> storageList = new ArrayList<>();
     private List<Os> osList = new ArrayList<>();
     private List<Processor> processorList = new ArrayList<>();
 
-    public LegionConfig(Legion legion) throws SQLException {
+    public ThinkPadConfig(ThinkPad thinkPad) throws SQLException {
         Logger logger = LoggerFactory.getLogger(Config.class);
-        logger.info("Legion laptop frame initialized");
-        setContentPane(LegionConfigPanel);
+        logger.info("ThinkPad laptop frame initialized");
+        setContentPane(ThinkPadConfigPanel);
         setSize(800, 600);
         setTitle("Laptop Configurator");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-        this.legion = legion;
+        this.thinkPad = thinkPad;
         loadDataToUI();
         setDefaultComponents();
         setPriceLabel();
@@ -82,7 +82,7 @@ public class LegionConfig extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    selectedStorage=LegionController.setSelectedStorage(
+                    selectedStorage=ThinkPadController.setSelectedStorage(
                             storageComboBox.getSelectedItem().toString(),storageList);
                     storagePriceLabel.setText(Integer.toString(selectedStorage.getPrice()));
                     storageSpeedLabel.setText(Integer.toString(selectedStorage.getSpeed()));
@@ -99,7 +99,7 @@ public class LegionConfig extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    selectedMemory =LegionController.setSelectedMemory(
+                    selectedMemory =ThinkPadController.setSelectedMemory(
                             memoryComboBox.getSelectedItem().toString(),memoryList);
                     memoryPriceLabel.setText(Integer.toString(selectedMemory.getPrice()));
                     memorySpeedLabel.setText(Integer.toString(selectedMemory.getSpeed()));
@@ -116,7 +116,7 @@ public class LegionConfig extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    selectedProcessor =LegionController.setSelectedProcessor(
+                    selectedProcessor =ThinkPadController.setSelectedProcessor(
                             processorComboBox.getSelectedItem().toString(),processorList);
                     processorPriceLabel.setText(Integer.toString(selectedProcessor.getPrice()));
                     processorSpeedLabel.setText(Integer.toString(selectedProcessor.getSpeed()));
@@ -138,7 +138,7 @@ public class LegionConfig extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    selectedGraphicsCard = LegionController.setSelectedGraphics(
+                    selectedGraphicsCard = ThinkPadController.setSelectedGraphics(
                             memoryComboBox.getSelectedItem().toString(),graphics_cardsList);
                     graphicsPriceLabel.setText(Integer.toString(selectedGraphicsCard.getPrice()));
                     graphicsSpeedLabel.setText(Integer.toString(selectedGraphicsCard.getSpeed()));
@@ -156,7 +156,7 @@ public class LegionConfig extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    selectedOs =LegionController.setSelectedOs(
+                    selectedOs =ThinkPadController.setSelectedOs(
                             osComboBox.getSelectedItem().toString(),osList);
                     memoryPriceLabel.setText(Integer.toString(selectedOs.getPrice()));
                     setPriceLabel();
@@ -175,7 +175,7 @@ public class LegionConfig extends JFrame{
 
     }
     private void loadDataToUI() throws SQLException {
-        totalLabel.setText(Integer.toString(legion.getPrice()));
+        totalLabel.setText(Integer.toString(thinkPad.getPrice()));
         addItemsToProcessorComboBox();
         addItemsToStorageComboBox();
         addItemsToMemoryComboBox();
@@ -292,21 +292,21 @@ public class LegionConfig extends JFrame{
         memoryPriceLabel.setText(Integer.toString(osList.get(0).getPrice()));
     }
     private void handleOrderClick() {
-        Legion legion = (Legion) this.legion;
-        legion.setPrice(getOrderTotalPrice());
-        legion.setGraphics_card(selectedGraphicsCard.getId());
-        legion.setStorage(selectedStorage.getId());
-        legion.setMemory(selectedMemory.getId());
-        legion.setOs(selectedOs.getId());
-        legion.setProcessor(selectedProcessor.getId());
+        ThinkPad thinkPad = (ThinkPad) this.thinkPad;
+        thinkPad.setPrice(getOrderTotalPrice());
+        thinkPad.setGraphics_card(selectedGraphicsCard.getId());
+        thinkPad.setStorage(selectedStorage.getId());
+        thinkPad.setMemory(selectedMemory.getId());
+        thinkPad.setOs(selectedOs.getId());
+        thinkPad.setProcessor(selectedProcessor.getId());
 
-        SpecialOffer offer = LegionController.getOffer(
+        SpecialOffer offer = ThinkPadController.getOffer(
                 couponField.getText(),
-                legion);
+                thinkPad);
 
-        legion.setPrice(offer.getPrice());
+        thinkPad.setPrice(offer.getPrice());
 
-        if(LegionController.storeLaptop(legion))
+        if(ThinkPadController.storeLaptop(thinkPad))
         {
             dispose();
             Login log = new Login(false);
@@ -314,7 +314,7 @@ public class LegionConfig extends JFrame{
 
     }
     private int getOrderTotalPrice() {
-        return legion.getPrice()
+        return thinkPad.getPrice()
                 + selectedGraphicsCard.getPrice()
                 + selectedMemory.getPrice()
                 + selectedProcessor.getPrice()
@@ -331,7 +331,7 @@ public class LegionConfig extends JFrame{
     }
     private void setPriceLabel() {
         totalLabel.setText(Integer.toString(
-                legion.getPrice()
+                thinkPad.getPrice()
                         + selectedGraphicsCard.getPrice()
                         + selectedMemory.getPrice()
                         + selectedProcessor.getPrice()
