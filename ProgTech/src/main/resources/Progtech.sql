@@ -60,7 +60,8 @@ CREATE TABLE `laptops` (
   `memory` int(10) NOT NULL,
   `os` int(10) NOT NULL,
   `price` int(10) UNSIGNED NOT NULL,
-  `type` varchar(40) NOT NULL
+  `type` varchar(40) NOT NULL,
+  `uid` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
