@@ -32,18 +32,18 @@
 ## 5. Fizikai környezet
 - **Intellij**
 - **Xampp/Mysql**
-- **JavaFx**
+- **Swing**
 
 ## 6. Architekturális terv
  - **Adatbázisszerver(Mysql)**
  - **Java**
- - **JavaFx**
+ - **Swing**
  
 ## 7. Implementációs terv
-**Az alkalmazás Java nyelven készül. Az ablakok megjelenítését, módosítását JavaFx-segítségévle kezeljük. A fejlesztés során két tervezési mintát fogunk megvalósítani. Az első a Decorator amivel a kuponos akciókat fogjuk kezelni. A második pedig a Controller melynek segíségével fogjuk a konfigurációkat összerakni.**
+**Az alkalmazás Java nyelven készül. Az ablakok megjelenítését, módosítását Swing-segítségével kezeljük. A fejlesztés során két tervezési mintát fogunk megvalósítani. Az első a Decorator amivel a kuponos akciókat fogjuk kezelni. A második pedig a MVC melynek segíségével fogjuk az adatbázis és az user interface közötti kapcsolatot biztosítani.**
  
 ## 8. Adatbázisterv
 ![image](../docs/img/adatbazis_modell.png)
 ## 9. Tesztterv
-
-## 10. Telepítési terv
+- **Unit teszte:**
+  - **A metódusok működését fogjuk vizsgálni velük**
