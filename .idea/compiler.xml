@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="progtech" />
+        <module name="ProgTech" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ProgTech" target="18" />
       <module name="progtech" target="18" />
     </bytecodeTargetLevel>
   </component>

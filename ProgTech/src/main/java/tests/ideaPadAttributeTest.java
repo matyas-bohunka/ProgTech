@@ -1,7 +1,6 @@
 package tests;
 
 import Classes.Laptop_types.IdeaPad;
-import Classes.Laptop_types.ThinkPad;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
