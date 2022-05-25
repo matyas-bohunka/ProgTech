@@ -37,8 +37,8 @@ public class ThinkPadController {
                 + thinkPad.getGraphics_card() + ","
                 + thinkPad.getMemory() + ","
                 + thinkPad.getOs() + ","
-                + thinkPad.getPrice() + ","
-                + thinkPad.getType() + "," +
+                + thinkPad.getPrice() + ",'"
+                + thinkPad.getType() + "'," +
                 MySQLConnect.connectedUSer.id + ");";
         logger.info(laptop);
         try {

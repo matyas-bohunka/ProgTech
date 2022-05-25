@@ -37,8 +37,8 @@ public class LegionController {
                 + legion.getGraphics_card() + ","
                 + legion.getMemory() + ","
                 + legion.getOs() + ","
-                + legion.getPrice() + ","
-                + legion.getType() + "," +
+                + legion.getPrice() + ",'"
+                + legion.getType() + "'," +
                 MySQLConnect.connectedUSer.id + ");";
         logger.info(laptop);
         try {

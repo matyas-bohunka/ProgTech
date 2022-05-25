@@ -37,8 +37,8 @@ public class IdeaPadController {
                 + null + ","
                 + ideaPad.getMemory() + ","
                 + ideaPad.getOs() + ","
-                + ideaPad.getPrice() + ","
-                + ideaPad.getType() + "," +
+                + ideaPad.getPrice() + ",'"
+                + ideaPad.getType() + "'," +
                 MySQLConnect.connectedUSer.id + ");";
         logger.info(laptop);
         try {

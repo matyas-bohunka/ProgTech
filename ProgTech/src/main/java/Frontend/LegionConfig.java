@@ -158,7 +158,7 @@ public class LegionConfig extends JFrame{
                 try {
                     selectedOs =LegionController.setSelectedOs(
                             osComboBox.getSelectedItem().toString(),osList);
-                    memoryPriceLabel.setText(Integer.toString(selectedOs.getPrice()));
+                    osPriceLabel.setText(Integer.toString(selectedOs.getPrice()));
                     setPriceLabel();
                     logger.info("new os selected");
                 } catch (SQLException ex) {

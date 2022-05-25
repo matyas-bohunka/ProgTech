@@ -158,7 +158,7 @@ public class ThinkPadConfig extends JFrame{
                 try {
                     selectedOs =ThinkPadController.setSelectedOs(
                             osComboBox.getSelectedItem().toString(),osList);
-                    memoryPriceLabel.setText(Integer.toString(selectedOs.getPrice()));
+                    osPriceLabel.setText(Integer.toString(selectedOs.getPrice()));
                     setPriceLabel();
                     logger.info("new os selected");
                 } catch (SQLException ex) {

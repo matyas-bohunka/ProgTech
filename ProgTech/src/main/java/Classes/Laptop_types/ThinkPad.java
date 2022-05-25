@@ -2,7 +2,7 @@ package Classes.Laptop_types;
 
 import Classes.Laptop.Laptop;
 
-public abstract class ThinkPad extends Laptop {
+public class ThinkPad extends Laptop {
     public ThinkPad(int price) {
         this.setPrice(price);
         this.setType();
