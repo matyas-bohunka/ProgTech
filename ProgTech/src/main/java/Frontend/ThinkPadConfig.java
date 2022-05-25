@@ -196,6 +196,8 @@ public class ThinkPadConfig extends JFrame{
             osComboBox.addItem(resultSet.getString("name"));
             os.setName(resultSet.getString("name"));
             os.setPrice(resultSet.getInt("price"));
+            os.setId(resultSet.getInt("id"));
+
             osList.add(os);
         }
     }
@@ -211,6 +213,8 @@ public class ThinkPadConfig extends JFrame{
             graphics_card.setSpeed(resultSet.getInt("speed"));
             graphics_card.setPrice(resultSet.getInt("price"));
             graphics_card.setTdp(resultSet.getInt("tdp"));
+            graphics_card.setId(resultSet.getInt("id"));
+
             graphics_cardsList.add(graphics_card);
         }
     }
@@ -225,6 +229,8 @@ public class ThinkPadConfig extends JFrame{
             memory.setType(resultSet.getString("type"));
             memory.setSpeed(resultSet.getInt("speed"));
             memory.setPrice(resultSet.getInt("price"));
+            memory.setId(resultSet.getInt("id"));
+
             memoryList.add(memory);
         }
     }
@@ -239,6 +245,7 @@ public class ThinkPadConfig extends JFrame{
             storage.setType(resultSet.getString("type"));
             storage.setSpeed(resultSet.getInt("speed"));
             storage.setPrice(resultSet.getInt("price"));
+            storage.setId(resultSet.getInt("id"));
             storageList.add(storage);
         }
     }
@@ -258,6 +265,8 @@ public class ThinkPadConfig extends JFrame{
             processor.setGpu_name(resultSet.getString("gpu_name"));
             processor.setGpu_speed(resultSet.getInt("gpu_speed"));
             processor.setGpu_memory(resultSet.getString("gpu_memory"));
+            processor.setId(resultSet.getInt("id"));
+
             processorList.add(processor);
         }
     }

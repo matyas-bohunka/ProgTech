@@ -212,6 +212,8 @@ public class LegionConfig extends JFrame{
             graphics_card.setSpeed(resultSet.getInt("speed"));
             graphics_card.setPrice(resultSet.getInt("price"));
             graphics_card.setTdp(resultSet.getInt("tdp"));
+            graphics_card.setId(resultSet.getInt("id"));
+
             graphics_cardsList.add(graphics_card);
         }
     }
@@ -226,6 +228,8 @@ public class LegionConfig extends JFrame{
             memory.setType(resultSet.getString("type"));
             memory.setSpeed(resultSet.getInt("speed"));
             memory.setPrice(resultSet.getInt("price"));
+            memory.setId(resultSet.getInt("id"));
+
             memoryList.add(memory);
         }
     }
@@ -240,6 +244,8 @@ public class LegionConfig extends JFrame{
             storage.setType(resultSet.getString("type"));
             storage.setSpeed(resultSet.getInt("speed"));
             storage.setPrice(resultSet.getInt("price"));
+            storage.setId(resultSet.getInt("id"));
+
             storageList.add(storage);
         }
     }
@@ -259,6 +265,8 @@ public class LegionConfig extends JFrame{
             processor.setGpu_name(resultSet.getString("gpu_name"));
             processor.setGpu_speed(resultSet.getInt("gpu_speed"));
             processor.setGpu_memory(resultSet.getString("gpu_memory"));
+            processor.setId(resultSet.getInt("id"));
+
             processorList.add(processor);
         }
     }

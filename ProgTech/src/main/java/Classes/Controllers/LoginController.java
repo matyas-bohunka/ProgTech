@@ -102,15 +102,15 @@ public class LoginController {
         try {
             form.logger.info("Preparing data for table.");
             String query = "SELECT laptops.type , laptops.price,\n" +
-                    "grapgics_card.name AS 'Graphics Card', \n" +
+                    "graphics_card.name AS 'Graphics Card', \n" +
                     "storage.name AS 'Storage',\n" +
-                    "processor.name AS 'Processor' \n" +
-                    "memory.name AS 'Memmory' \n" +
+                    "processor.name AS 'Processor', \n" +
+                    "memory.name AS 'Memory', \n" +
                     "os.name AS 'Os' \n" +
-                    "FROM((laptops INNER JOIN graphics_card ON laptops.graphics_card = graphics_card.id)\n" +
+                    "FROM((((laptops INNER JOIN graphics_card ON laptops.graphics_card = graphics_card.id)\n" +
                     "INNER JOIN storage ON laptops.storage = storage.id)\n" +
                     "INNER JOIN processor ON laptops.processor = processor.id)\n" +
-                    "INNER JOIN memory ON laptops.memory = storage.memory)\n" +
+                    "INNER JOIN memory ON laptops.memory = memory.id)\n" +
                     "INNER JOIN os ON laptops.os = os.id\n" +
                     "WHERE laptops.uid ='" + MySQLConnect.connectedUSer.id + "';";
 
