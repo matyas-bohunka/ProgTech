@@ -205,7 +205,13 @@ public class LoginController {
 
     public void checkOrdersButtonClicked() {
         form.logger.info("Check orders button pressed");
-        prepareDataForTable(getTableSize());
-        form.logger.info("Table successfully created.");
+        if(getTableSize()!=0) {
+            prepareDataForTable(getTableSize());
+
+            form.logger.info("Table successfully created.");
+        } else { JOptionPane.showMessageDialog(form,
+                "You don't have any order yet.", "Error!", JOptionPane.ERROR_MESSAGE);
+            form.logger.info("There is no order.");
+        }
     }
 }
