@@ -44,6 +44,7 @@ public class IdeaPadConfig extends JFrame{
     private JLabel processorCoreLabel;
     private JLabel processorThreadLabel;
     private JLabel osPriceLabel;
+    private JButton cancelButton;
 
     private Laptop ideaPad;
     private static Memory selectedMemory;
@@ -147,6 +148,14 @@ public class IdeaPadConfig extends JFrame{
             }
         });
 
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                logger.info("IdeaPad order cancelled");
+                dispose();
+                Login log = new Login(false);
+            }
+        });
     }
     private void loadDataToUI() throws SQLException {
         totalLabel.setText(Integer.toString(ideaPad.getPrice()));

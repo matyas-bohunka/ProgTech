@@ -50,6 +50,7 @@ public class ThinkPadConfig extends JFrame{
     private JLabel graphicsSpeedLabel;
     private JLabel graphicsPriceLabel;
     private JLabel osPriceLabel;
+    private JButton cancelButton;
 
     private Laptop thinkPad;
     private static Graphics_card selectedGraphicsCard;
@@ -173,6 +174,14 @@ public class ThinkPadConfig extends JFrame{
             }
         });
 
+        cancelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                logger.info("ThinkPad order cancelled");
+                dispose();
+                Login log = new Login(false);
+            }
+        });
     }
     private void loadDataToUI() throws SQLException {
         totalLabel.setText(Integer.toString(thinkPad.getPrice()));
