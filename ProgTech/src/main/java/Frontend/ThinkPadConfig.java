@@ -139,7 +139,7 @@ public class ThinkPadConfig extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     selectedGraphicsCard = ThinkPadController.setSelectedGraphics(
-                            memoryComboBox.getSelectedItem().toString(),graphics_cardsList);
+                            graphicsComboBox.getSelectedItem().toString(),graphics_cardsList);
                     graphicsPriceLabel.setText(Integer.toString(selectedGraphicsCard.getPrice()));
                     graphicsSpeedLabel.setText(Integer.toString(selectedGraphicsCard.getSpeed()));
                     graphicsMemoryLabel.setText(selectedGraphicsCard.getMemory_type());
