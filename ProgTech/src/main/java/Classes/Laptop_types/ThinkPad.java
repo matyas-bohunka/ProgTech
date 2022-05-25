@@ -2,7 +2,7 @@ package Classes.Laptop_types;
 
 import Classes.Laptop.Laptop;
 
-public abstract class ThinkPad extends Laptop {
+public class ThinkPad extends Laptop {
     public ThinkPad(int price) {
         this.setPrice(price);
         this.setType();
@@ -63,7 +63,7 @@ public abstract class ThinkPad extends Laptop {
 
     @Override
     public void setPrice(int price) {
-        super.price =(int)(price*1.5);
+        super.price =(int)(price*1.1);
     }
 
     @Override

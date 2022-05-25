@@ -52,7 +52,7 @@ public class Storage {
         return price;
     }
 
-    public void setPrice(int Price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
