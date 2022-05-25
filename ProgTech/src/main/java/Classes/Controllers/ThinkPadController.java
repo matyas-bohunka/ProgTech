@@ -32,8 +32,8 @@ public class ThinkPadController {
                 " price," +
                 "type," +
                 "uid) " +
-                "VALUES ('" + thinkPad.getStorage() + "','"
-                + thinkPad.getProcessor() + "',"
+                "VALUES (" + thinkPad.getStorage() + ","
+                + thinkPad.getProcessor() + ","
                 + thinkPad.getGraphics_card() + ","
                 + thinkPad.getMemory() + ","
                 + thinkPad.getOs() + ","

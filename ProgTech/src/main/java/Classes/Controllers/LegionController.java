@@ -32,8 +32,8 @@ public class LegionController {
                 " price," +
                 "type," +
                 "uid) " +
-                "VALUES ('" + legion.getStorage() + "','"
-                + legion.getProcessor() + "',"
+                "VALUES (" + legion.getStorage() + ","
+                + legion.getProcessor() + ","
                 + legion.getGraphics_card() + ","
                 + legion.getMemory() + ","
                 + legion.getOs() + ","

@@ -32,8 +32,8 @@ public class IdeaPadController {
                 " price," +
                 "type," +
                 "uid) " +
-                "VALUES ('" + ideaPad.getStorage() + "','"
-                + ideaPad.getProcessor() + "',"
+                "VALUES (" + ideaPad.getStorage() + ","
+                + ideaPad.getProcessor() + ","
                 + null + ","
                 + ideaPad.getMemory() + ","
                 + ideaPad.getOs() + ","
