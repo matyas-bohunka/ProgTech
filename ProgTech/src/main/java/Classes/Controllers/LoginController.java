@@ -161,6 +161,8 @@ public class LoginController {
         f.setSize(800, 600);
         f.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         f.setVisible(true);
+        f.toFront();
+        f.requestFocus();
         form.setVisible(false);
         Login temp = form;
         f.addWindowListener(new java.awt.event.WindowAdapter() {
