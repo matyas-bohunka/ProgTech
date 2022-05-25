@@ -23,7 +23,7 @@ public class Config extends JFrame{
         Logger logger = LoggerFactory.getLogger(Config.class);
         setContentPane(ConfPanel);
         setSize(800, 600);
-        setTitle("Spaceship Configurator");
+        setTitle("Laptop Configurator");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 

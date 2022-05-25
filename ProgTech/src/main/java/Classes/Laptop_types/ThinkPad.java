@@ -63,7 +63,7 @@ public class ThinkPad extends Laptop {
 
     @Override
     public void setPrice(int price) {
-        super.price =(int)(price*1.5);
+        super.price =(int)(price*1.1);
     }
 
     @Override

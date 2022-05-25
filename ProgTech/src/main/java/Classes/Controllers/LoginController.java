@@ -149,14 +149,16 @@ public class LoginController {
         form.logger.info("Creating table.");
         DefaultTableModel model = new DefaultTableModel(data, columns);
         JTable table = new JTable(model);
+        table.setSize(700,500);
         table.setShowGrid(true);
         table.setShowVerticalLines(true);
         JScrollPane pane = new JScrollPane(table);
         JFrame f = new JFrame("Populate JTable from Database");
         JPanel panel = new JPanel();
+        panel.setSize(800,600);
         panel.add(pane);
         f.add(panel);
-        f.setSize(500, 250);
+        f.setSize(800, 600);
         f.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         f.setVisible(true);
         form.setVisible(false);
@@ -165,8 +167,7 @@ public class LoginController {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 f.dispose();
-                temp.setVisible(true);
-            }
+                temp.setVisible(true);            }
         });
     }
 
